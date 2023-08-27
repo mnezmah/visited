@@ -7,4 +7,5 @@ export interface MarkerItem {
         location: google.maps.LatLng
     ) => void;
     infoWindowContent?: string | React.ReactNode;
+    color?: string
 }
