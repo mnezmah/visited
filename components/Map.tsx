@@ -2,7 +2,7 @@ import {GoogleMap, useLoadScript} from "@react-google-maps/api";
 
 export const Map = ({}) => {
     // @ts-ignore
-    const googleApiKey:string = process.env.GOOGLE_API_KEY
+    const googleApiKey:string = process.env.NEXT_PUBLIC_GOOGLE_API_KEY
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: googleApiKey,
     });
