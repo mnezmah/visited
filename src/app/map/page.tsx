@@ -1,5 +1,5 @@
 'use client'
-import {Map} from '../../components/Map'
+import {Map} from '@/src/components/Map'
 const page = () => {
     return (
             <div className='h-[100vh]'>
