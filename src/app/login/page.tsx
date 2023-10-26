@@ -2,11 +2,14 @@
 import React, {ChangeEvent, useState} from "react";
 import {Input} from '@/src/components/Input'
 import {InputType} from "@/src/enums/InputType.enum";
+import {Button} from "@/src/components/Button";
+import {ButtonType} from "@/src/enums/ButtonType.enum";
+import Link from "next/link";
 
-const SignUpPage = ()=>{
+
+const LoginUpPage = ()=>{
     const [user, setUser] = useState({
         name: "",
-        email: "",
         password:""
     })
 
@@ -21,10 +24,14 @@ const SignUpPage = ()=>{
         console.log({user})
     }
 
+    const onLoginHandler = ():void=> {
+
+    }
+
     return (
         <div className='h-[100vh]'>
             <h1 className='text-center text-2xl'>
-                Sing up
+                Log in
             </h1>
             <div className='p-2'>
                 <Input  id="name"
@@ -32,14 +39,6 @@ const SignUpPage = ()=>{
                         value={user.name}
                         onChange={onChangeHandler}
                         placeholder='Enter your name here'
-                        className='max-w-[60%]'
-                />
-                <Input  id="email"
-                        label="Email"
-                        value={user.email}
-                        type={InputType.EMAIL}
-                        onChange={onChangeHandler}
-                        placeholder='Enter your email here'
                         className='max-w-[60%]'
                 />
                 <Input  id="password"
@@ -50,11 +49,13 @@ const SignUpPage = ()=>{
                         placeholder='Enter your password here'
                         className='max-w-[60%]'
                 />
+                <Button onClick={onLoginHandler} title='Submit' type={ButtonType.SUBMIT}/>
             </div>
 
+            <Link href="/signup">Not registered yet? Click to register</Link>
         </div>
     )
 }
 
 
-export default SignUpPage
+export default LoginUpPage

@@ -1,0 +1,39 @@
+import mongoose from "mongoose";
+
+const userSchema = new mongoose.Schema({
+    username: {
+        type: String,
+        required: [true, "Please provide a username"],
+        unique: true,
+    },
+    email: {
+        type: String,
+        required: [true, "Please provide an email"],
+        unique: true,
+    },
+    password: {
+        type: String,
+        required: [true, "Please provide an password"],
+    },
+    // todo: add later on
+    // role: {
+    //     type: String,
+    //     required: [true, "Please provide an password"],
+    // }
+    isVerified: {
+        type: Boolean,
+        default: false,
+    },
+    // todo: when the role is implemented, remove this
+    isAdmin: {
+        type: Boolean,
+        default: false,
+    },
+    forgotPasswordToken: String,
+    forgotPasswordTokenExpiry: Date,
+    verifyToken: String
+})
+
+const User  =mongoose.models.users || mongoose.model("users", userSchema)
+
+export default User

@@ -4,6 +4,7 @@ import {Input} from '@/src/components/Input'
 import {InputType} from "@/src/enums/InputType.enum";
 import {Button} from "@/src/components/Button";
 import {ButtonType} from "@/src/enums/ButtonType.enum";
+import Link from "next/link";
 
 const SignUpPage = ()=>{
      const [user, setUser] = useState({
@@ -55,6 +56,7 @@ return (
             />
             <Button onClick={onSignupHandler} title='Submit' type={ButtonType.SUBMIT}/>
 
+            <Link href="/login">Already registered? Go to Login</Link>
 
         </div>
 
