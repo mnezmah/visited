@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efc9d7a0-e160-4fe0-b61a-ee1df11d7e59" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/profile/[id]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/profile/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/user.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/api/users/signup/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/users/signup/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/signup/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +84,7 @@
       <workItem from="1696220044190" duration="4034000" />
       <workItem from="1696393399998" duration="3140000" />
       <workItem from="1698121449570" duration="4087000" />
-      <workItem from="1698294019026" duration="3666000" />
+      <workItem from="1698294019026" duration="5930000" />
     </task>
     <servers />
   </component>

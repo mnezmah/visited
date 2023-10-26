@@ -1,4 +1,4 @@
-
+import bcryptjs from 'bcryptjs'
 import {connect} from '@/src/dbConfig/dbConfig'
 import {NextRequest, NextResponse} from "next/server";
 import User from "@/src/models/user.model";
@@ -16,6 +16,24 @@ export const POST = async(request: NextRequest)=>{
             return NextResponse.json(
                 {error: "User already exists"}, {status: 400})
             }
+        //hash password
+        const salt = await bcryptjs.genSalt(10)
+        const hashedPassword = await bcryptjs.hash(pasword, salt)
+
+        const newUser = new User({
+            username,
+            email,
+            password: hashedPassword
+        })
+
+        const savedUser =  await newUser.save()
+
+        return NextResponse.json({
+            message: "User created successfully",
+            success: true,
+            savedUser
+        })
+
 }// @ts-ignore
     catch(error: Error){
         return NextResponse.json({error: error.message},

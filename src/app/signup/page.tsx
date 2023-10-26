@@ -1,18 +1,22 @@
 'use client'
-import React, {ChangeEvent, useState} from "react";
+import React, {ChangeEvent, useEffect, useState} from "react";
 import {Input} from '@/src/components/Input'
 import {InputType} from "@/src/enums/InputType.enum";
 import {Button} from "@/src/components/Button";
 import {ButtonType} from "@/src/enums/ButtonType.enum";
 import Link from "next/link";
+import {useRouter} from "next/navigation";
+import toast from "react-hot-toast";
 
 const SignUpPage = ()=>{
+    const router = useRouter()
      const [user, setUser] = useState({
          name: "",
          email: "",
          password:""
      })
-
+    const [isLoading, setIsLoading] = useState(false)
+const [isButtonDisabled, setIsButtonDisabled] = useState(false)
      const onChangeHandler = (event:ChangeEvent<HTMLInputElement>, ) => {
          const {value, id} = event.currentTarget
          setUser(
@@ -25,12 +29,27 @@ const SignUpPage = ()=>{
 
      const onSignupHandler = async ()=>{
 
+         try {}
+// @ts-ignore
+catch (error: Error){
+    toast.error(error.message)
+}
+         finally{
+setIsLoading(false)
+}
      }
+
+     useEffect(()=>{
+         if(user.email.length &&  user.name.length && user.password.length) setIsButtonDisabled(false)
+         else setIsButtonDisabled(true)
+     }, [user])
+
+    {console.warn({user})}
 
 return (
     <div className='flex flex-col items-center justify-center min-h-screen'>
         <h1 className='text-center text-2xl'>
-            Sign up
+            { isLoading ? "Processing" : "Sign up" }
         </h1>
         <div className='p-3'>
             <Input  id="name"
@@ -54,7 +73,11 @@ return (
                     onChange={onChangeHandler}
                     placeholder='Enter your password here'
             />
-            <Button onClick={onSignupHandler} title='Submit' type={ButtonType.SUBMIT}/>
+            <Button onClick={onSignupHandler}
+                    title='Singn up'
+                    type={ButtonType.SUBMIT}
+                    disabled={isButtonDisabled}
+                   />
 
             <Link href="/login">Already registered? Go to Login</Link>
 
