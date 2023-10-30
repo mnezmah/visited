@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const LoginUpPage = ()=>{
     const [user, setUser] = useState({
-        name: "",
+        username: "",
         password:""
     })
 
@@ -34,16 +34,16 @@ const LoginUpPage = ()=>{
                 Log in
             </h1>
             <div className='p-2'>
-                <Input  id="name"
-                        label="Name"
-                        value={user.name}
+                <Input  id="username"
+                        label="username"
+                        value={user.username}
                         onChange={onChangeHandler}
                         placeholder='Enter your name here'
                         className='max-w-[60%]'
                 />
                 <Input  id="password"
                         label="Password"
-                        value={user.name}
+                        value={user.password}
                         type={InputType.PASSWORD}
                         onChange={onChangeHandler}
                         placeholder='Enter your password here'

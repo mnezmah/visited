@@ -1,17 +1,19 @@
 'use client'
 import React, {ChangeEvent, useEffect, useState} from "react";
+import toast from "react-hot-toast";
 import {Input} from '@/src/components/Input'
 import {InputType} from "@/src/enums/InputType.enum";
 import {Button} from "@/src/components/Button";
 import {ButtonType} from "@/src/enums/ButtonType.enum";
 import Link from "next/link";
 import {useRouter} from "next/navigation";
-import toast from "react-hot-toast";
+import axios from "axios";
+
 
 const SignUpPage = ()=>{
     const router = useRouter()
      const [user, setUser] = useState({
-         name: "",
+         username: "",
          email: "",
          password:""
      })
@@ -28,8 +30,12 @@ const [isButtonDisabled, setIsButtonDisabled] = useState(false)
      }
 
      const onSignupHandler = async ()=>{
-
-         try {}
+         try {
+             setIsLoading(true)
+            const response = await axios.post('api/users/signup', user)
+             console.warn({response: response.data})
+             router.push('/login')
+         }
 // @ts-ignore
 catch (error: Error){
     toast.error(error.message)
@@ -40,7 +46,7 @@ setIsLoading(false)
      }
 
      useEffect(()=>{
-         if(user.email.length &&  user.name.length && user.password.length) setIsButtonDisabled(false)
+         if(user.email.length &&  user.username.length && user.password.length) setIsButtonDisabled(false)
          else setIsButtonDisabled(true)
      }, [user])
 
@@ -52,9 +58,9 @@ return (
             { isLoading ? "Processing" : "Sign up" }
         </h1>
         <div className='p-3'>
-            <Input  id="name"
-                    label="Name"
-                    value={user.name}
+            <Input  id="username"
+                    label="username"
+                    value={user.username}
                     onChange={onChangeHandler}
                     placeholder='Enter your name here'
 
@@ -68,7 +74,7 @@ return (
             />
             <Input  id="password"
                     label="Password"
-                    value={user.name}
+                    value={user.password}
                     type={InputType.PASSWORD}
                     onChange={onChangeHandler}
                     placeholder='Enter your password here'

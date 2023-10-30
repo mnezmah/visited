@@ -3,6 +3,7 @@ import * as mongoose from "mongoose";
 
 export async function connect(){
     try{
+        console.log({mongoUri:process.env.MONGO_URI})
 await mongoose.connect(process.env.MONGO_URI!)
         const connection = mongoose.connection
 
@@ -15,8 +16,8 @@ await mongoose.connect(process.env.MONGO_URI!)
         })
 
 
-    }catch(error){
+    }catch(error) {
         console.error('Something went wrong', {error})
-
+    }
 
 }
