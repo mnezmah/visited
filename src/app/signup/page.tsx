@@ -1,16 +1,16 @@
 'use client'
-import React, {ChangeEvent, useEffect, useState} from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import {Input} from '@/src/components/Input'
-import {InputType} from "@/src/enums/InputType.enum";
-import {Button} from "@/src/components/Button";
-import {ButtonType} from "@/src/enums/ButtonType.enum";
+import { Input } from '@/src/components/Input'
+import { InputType } from "@/src/enums/InputType.enum";
+import { Button } from "@/src/components/Button";
+import { ButtonType } from "@/src/enums/ButtonType.enum";
 import Link from "next/link";
-import {useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
 import axios from "axios";
 
 
-const SignUpPage = ()=>{
+const SignUpPage = () => {
     const router = useRouter()
      const [user, setUser] = useState({
          username: "",
@@ -18,7 +18,7 @@ const SignUpPage = ()=>{
          password:""
      })
     const [isLoading, setIsLoading] = useState(false)
-const [isButtonDisabled, setIsButtonDisabled] = useState(false)
+    const [isButtonDisabled, setIsButtonDisabled] = useState(false)
      const onChangeHandler = (event:ChangeEvent<HTMLInputElement>, ) => {
          const {value, id} = event.currentTarget
          setUser(
@@ -29,7 +29,7 @@ const [isButtonDisabled, setIsButtonDisabled] = useState(false)
          console.log({user})
      }
 
-     const onSignupHandler = async ()=>{
+     const onSignupHandler = async (): Promise<void> => {
          try {
              setIsLoading(true)
             const response = await axios.post('api/users/signup', user)
@@ -48,7 +48,7 @@ setIsLoading(false)
      useEffect(()=>{
          if(user.email.length &&  user.username.length && user.password.length) setIsButtonDisabled(false)
          else setIsButtonDisabled(true)
-     }, [user])
+     }, [user.email, user.username , user.password])
 
     {console.warn({user})}
 

@@ -10,7 +10,7 @@ export const POST = async(request: NextRequest)=>{
     try {
     const requestBody = await request.json()
     const {username, email, password} = requestBody
-console.log({requestBody})
+
     const user = await User.findOne({email})
 
         if(user){
@@ -19,9 +19,8 @@ console.log({requestBody})
             }
         //hash password
         const salt = await  bcryptjs.genSalt(10)
-        console.warn({salt})
+
         const hashedPassword = await bcryptjs.hash(password, salt)
-console.warn({hashedPassword})
         const newUser = new User({
             username,
             email,
