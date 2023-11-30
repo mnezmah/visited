@@ -35,8 +35,7 @@ export const POST = async (request: NextRequest) => {
       success: true,
       savedUser,
     });
-    // @ts-ignore
-  } catch (error: Error) {
+  } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 };

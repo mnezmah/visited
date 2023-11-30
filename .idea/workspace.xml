@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efc9d7a0-e160-4fe0-b61a-ee1df11d7e59" name="Changes" comment="complete signup and login">
-      <change afterPath="$PROJECT_DIR$/src/app/api/users/logout/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/api/users/myself/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Navigation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/getDataFromToken.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/middleware.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/users/login/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/users/login/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/users/logout/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/users/logout/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/users/myself/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/users/myself/route.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/api/users/signup/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/users/signup/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/profile/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/profile/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/signup/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +101,8 @@
       <workItem from="1699605425981" duration="597000" />
       <workItem from="1699870140664" duration="598000" />
       <workItem from="1699871766211" duration="182000" />
-      <workItem from="1701150782363" duration="4143000" />
+      <workItem from="1701150782363" duration="4621000" />
+      <workItem from="1701325779389" duration="2495000" />
     </task>
     <task id="LOCAL-00001" summary="complete signup and login">
       <option name="closed" value="true" />

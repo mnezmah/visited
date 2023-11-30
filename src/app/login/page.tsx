@@ -34,8 +34,7 @@ const LoginPage = () => {
       console.warn({ response: response.data });
       toast.success("You are logged in!");
       router.push("/map");
-      // @ts-ignore
-    } catch (error: Error) {
+    } catch (error: any) {
       toast.error(error.message);
     } finally {
       setIsLoading(false);

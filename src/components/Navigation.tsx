@@ -12,8 +12,7 @@ export const Navigation = () => {
       await axios.get("api/users/logout");
       toast.success("You are logged out!");
       router.push("/login");
-      // @ts-ignore
-    } catch (error: Error) {
+    } catch (error: any) {
       console.log(error.message);
       toast.error(error.message);
     }
