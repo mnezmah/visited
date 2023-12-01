@@ -17,9 +17,12 @@ const ProfilePage = () => {
     <div className="flex">
       <h1>Profile page</h1>
       <h2>
-        {userId ? <Link href={`/profile/${userId}`}></Link> : "no user id"}
+        {userId ? (
+          <Link href={`/profile/${userId}`}>banana</Link>
+        ) : (
+          "no user id"
+        )}
       </h2>
-
       <Button
         onClick={getUserDetails}
         title="get user details"

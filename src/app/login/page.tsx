@@ -33,6 +33,7 @@ const LoginPage = () => {
       const response = await axios.post("api/users/login", user);
       console.warn({ response: response.data });
       toast.success("You are logged in!");
+      //set the initial page to redirect the user to
       router.push("/map");
     } catch (error: any) {
       toast.error(error.message);
