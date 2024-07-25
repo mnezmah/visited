@@ -18,7 +18,9 @@ export const sendEmail = async ({
     const hashedToken = await bcryptjs.hash(userId.toString(), 10);
 
     const emailTemplate = `<p>Click 
-    <a href='${process.env.DOMAIN}/verifyemail?token=${hashedToken}'>here</a>
+    <a href='${
+      process.env.DOMAIN
+    }/verifyemail?token=${hashedToken}'>here if you dare</a>
      to ${
        emailType === EmailType.VERIFY
          ? "verify your email"

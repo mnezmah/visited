@@ -14,7 +14,7 @@ const LoginPage = () => {
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [user, setUser] = useState({
-    username: "",
+    email: "",
     password: "",
   });
 
@@ -43,10 +43,10 @@ const LoginPage = () => {
   };
 
   useEffect(() => {
-    if (user.username.length && user.password.length)
-      setIsButtonDisabled(false);
-    else setIsButtonDisabled(true);
-  }, [user.username, user.password]);
+    const isEmailValid = user.email.includes("@");
+    const isPasswordValid = user.password.length > 0;
+    setIsButtonDisabled(!(isEmailValid && isPasswordValid));
+  }, [user.email, user.password]);
 
   return (
     <div className="h-[100vh]">
@@ -55,11 +55,12 @@ const LoginPage = () => {
       </h1>
       <div className="p-2">
         <Input
-          id="username"
-          label="username"
-          value={user.username}
+          type={InputType.EMAIL}
+          id="email"
+          label="email"
+          value={user.email}
           onChange={onChangeHandler}
-          placeholder="Enter your name here"
+          placeholder="Enter your mail here"
           className="max-w-[60%]"
         />
         <Input

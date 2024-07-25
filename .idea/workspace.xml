@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efc9d7a0-e160-4fe0-b61a-ee1df11d7e59" name="Changes" comment="complete signup and login">
-      <change afterPath="$PROJECT_DIR$/src/app/api/users/verfiyEmail/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enums/EmailType.enum.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/verifyemail/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/users/signup/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/users/signup/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/users/login/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/users/login/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/users/verfiyEmail/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/users/verfiyemail/route.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/signup/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbConfig/dbConfig.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbConfig/dbConfig.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/helpers/mailer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/mailer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,11 +62,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/verifyEmail" />
       <recent name="$PROJECT_DIR$/src/app" />
       <recent name="$PROJECT_DIR$/src/app/api" />
       <recent name="$PROJECT_DIR$/src/app/pages" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -113,7 +115,9 @@
       <workItem from="1701757505589" duration="2261000" />
       <workItem from="1702196629013" duration="4815000" />
       <workItem from="1721103090533" duration="4501000" />
-      <workItem from="1721275830405" duration="3136000" />
+      <workItem from="1721275830405" duration="5076000" />
+      <workItem from="1721621566588" duration="4905000" />
+      <workItem from="1721880883370" duration="4354000" />
     </task>
     <task id="LOCAL-00001" summary="complete signup and login">
       <option name="closed" value="true" />
@@ -128,6 +132,18 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+        <option value="GitHub.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

@@ -10,24 +10,30 @@ export const POST = async (request: NextRequest) => {
   try {
     const requestBody = await request.json();
     const { email, password } = requestBody;
-    const user = await User.findOne({ email });
+    console.log("Received email:", email);
+
+    const user = await User.findOne({ email: email.toLowerCase() });
     if (!user) {
+      console.log("User not found for email:", email);
+
       return NextResponse.json(
         { error: "User does not exist" },
         { status: 400 },
       );
     }
+
     const validPassword = await bcryptjs.compare(password, user.password);
     if (!validPassword) {
       return NextResponse.json({ error: "Invalid password" }, { status: 400 });
     }
+
     const tokenData = {
       id: user._id,
       username: user.username,
       email: user.email,
     };
 
-    const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET!, {
+    const token = jwt.sign(tokenData, process.env.TOKEN_SECRET!, {
       expiresIn: "8h",
     });
 

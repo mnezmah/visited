@@ -32,18 +32,25 @@ const SignUpPage = () => {
       setIsLoading(true);
       const response = await axios.post("api/users/signup", user);
       console.warn({ response: response.data });
-      router.push("/login");
+      if (response.data.success) {
+        router.push("/verifyemail");
+      } else {
+        toast.error(response.data.message || "Signup failed");
+      }
     } catch (error: any) {
-      toast.error(error.message);
+      toast.error(error.response?.data?.message || error.message);
     } finally {
       setIsLoading(false);
     }
   };
 
   useEffect(() => {
-    if (user.email.length && user.username.length && user.password.length)
-      setIsButtonDisabled(false);
-    else setIsButtonDisabled(true);
+    const isFormValid =
+      user.email.length > 0 &&
+      user.username.length > 0 &&
+      user.password.length > 0;
+
+    setIsButtonDisabled(!isFormValid);
   }, [user.email, user.username, user.password]);
 
   {

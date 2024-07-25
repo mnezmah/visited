@@ -20,7 +20,7 @@ export const POST = async (request: NextRequest) => {
     }
 
     // @ts-ignore
-    user.isVerfied = true;
+    user.isVerified = true;
     // @ts-ignore
     user.verifyToken = undefined;
     // @ts-ignore
